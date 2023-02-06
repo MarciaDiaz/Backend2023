@@ -21,8 +21,13 @@ class ProductManager {
   }
 
   //METODO2 BUSCAR EL QUE COINCIDA CON EL ID
-  getProductById() {
+  getProductById(idProduct) {
     //si no coincide "not found"
+    const product = this.products.find((prod) => prod.id === idProduct);
+
+    if (!product) {
+      throw new Error(`not found`);
+    }
   }
 }
 
