@@ -36,8 +36,6 @@ class ProductManager {
   }
 
   async getProductById(id) {
-    // Producto por ID
-
     const product = await this.getProduct();
 
     let element = product.find((x) => x.id === id);
@@ -50,7 +48,6 @@ class ProductManager {
   }
 
   async getProduct() {
-    //OBTENER
     try {
       const product = await fs.promises.readFile(this.#path, 'utf-8');
 
@@ -59,8 +56,6 @@ class ProductManager {
       return [];
     }
   }
-
-  // UPDATE PRODUCT
 
   async updateProduct(id, data) {
     console.log(id, data);
