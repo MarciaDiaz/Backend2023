@@ -16,4 +16,5 @@ let productos = [
   new Products(8, 'Mesa', 'Ratona', 45, 'Sin imagen', '009', 28),
   new Products(9, 'Perchero', 'De pared', 60, 'Sin imagen', '010', 16),
 ];
+
 export default productos;
