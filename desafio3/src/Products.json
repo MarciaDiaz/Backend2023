@@ -1,0 +1,11 @@
+[
+  { "id": 1, "title": "alfombra", "description": "voladora", "price": 145, "thumbnail": "sin foto", "code": 451923, "stock": 8 },
+  { "id": 0, "title": "jarron", "description": "gigante de piedra", "price": 245, "thumbnail": "sin foto", "code": 45194, "stock": 8 },
+  { "id": 2, "title": "florero", "description": "verde marfil", "price": 125, "thumbnail": "sin foto", "code": 4519, "stock": 8 },
+  { "id": 3, "title": "cinturon", "description": "cuero negro", "price": 1875, "thumbnail": "sin foto", "code": 4519235, "stock": 8 },
+  { "id": 4, "title": "mantel", "description": "bordado", "price": 285, "thumbnail": "sin foto", "code": 45195, "stock": 8 },
+  { "id": 5, "title": "cortina", "description": "colores varios", "price": 469, "thumbnail": "sin foto", "code": 451943, "stock": 8 },
+  { "id": 6, "title": "cuadro", "description": "artesanal", "price": 150, "thumbnail": "sin foto", "code": 45194, "stock": 8 },
+  { "id": 7, "title": "lampara", "description": "de pie, azul", "price": 138, "thumbnail": "sin foto", "code": 451559, "stock": 8 },
+  { "id": 8, "title": "mesa", "description": "ratona", "price": 198, "thumbnail": "sin foto", "code": 451, "stock": 8 }
+]

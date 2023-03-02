@@ -41,9 +41,9 @@ class ProductManager {
     let element = product.find((x) => x.id === id);
     if (element) {
       fs.promises.appendFile(`Producto con ID ${id}: ${JSON.stringify(element)}`);
-      return console.log(element);
+      return element;
     } else {
-      throw new Error(`Product with id: ${id} Not Found`);
+      return [];
     }
   }
 
@@ -85,7 +85,5 @@ class ProductManager {
     await fs.promises.writeFile(this.#path, JSON.stringify(updatedProducts));
   }
 }
-
-const manager = new ProductManager('./product.json');
 
 export default ProductManager;

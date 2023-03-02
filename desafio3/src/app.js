@@ -1,30 +1,16 @@
 import express from 'express';
-import productos from './data.js';
 import ProductManager from './productManager.js';
 
 const app = express();
-app.get('/', (req, res) => {
-  res.send('<h1>Hola!</h1>');
-});
-app.get('/products', (req, res) => {
-  res.send(productos);
+let manager = new ProductManager('./src/Products.json');
+
+app.get('/', async (req, res) => {
+  res.send('<h1>Hola! funciona?</h1>');
 });
 
-let manager = new ProductManager();
-app.get('/products/:id', async (req, res) => {
-  let num = parseInt(req.params.id);
-  res.send(manager.getProductById(num));
-});
-
-app.get('/products', (req, res) => {
-  let { limit } = req.query;
-  res.send(productos.filter((x) => x.id < limit));
-});
-
-//lista de max 3 items
 app.get('/products', async (req, res) => {
   const { limit } = req.query;
-  const prods = await item.getProducts();
+  const prods = await manager.getProduct();
   if (!limit) {
     await res.send(prods);
   }
@@ -33,11 +19,15 @@ app.get('/products', async (req, res) => {
   await res.send(filtered);
 });
 
-//segun el id
 app.get('/products/:id', async (req, res) => {
-  const prodId = await Number(req.params.id);
-  const result = await item.getProductById(prodId);
-  await res.send(result);
+  let num = parseInt(req.params.id);
+  const product = await manager.getProductById(num);
+
+  if (product.length === 0) {
+    res.send({ message: `producto no encontrado` });
+  }
+
+  res.send(product);
 });
 
 app.listen(8080, () => console.log(`Server listening to port 8080`));
