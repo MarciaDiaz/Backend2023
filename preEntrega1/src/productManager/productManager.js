@@ -1,5 +1,5 @@
-import fs from 'fs';
-import __dirname from '../utils.js';
+import fs from "fs";
+import __dirname from "../utils.js";
 
 class ProductManager {
   #path;
@@ -11,7 +11,7 @@ class ProductManager {
     //Obtener productos
     console.log(this.#path);
     try {
-      const products = await fs.promises.readFile(this.#path, 'utf-8');
+      const products = await fs.promises.readFile(this.#path, "utf-8");
       return JSON.parse(products);
     } catch (e) {
       return [];
@@ -35,8 +35,11 @@ class ProductManager {
     let cd = prod.find((x) => x.code === code);
 
     if (!cd) {
-      await fs.promises.writeFile(this.#path, JSON.stringify([...prod, newProduct]));
-      console.log('Producto agregado!');
+      await fs.promises.writeFile(
+        this.#path,
+        JSON.stringify([...prod, newProduct])
+      );
+      console.log("Producto agregado!");
       return [...prod, newProduct];
     } else {
       throw new Error(`El código ${code} ya esta registrado.`);
