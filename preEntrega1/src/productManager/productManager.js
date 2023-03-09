@@ -50,7 +50,9 @@ class ProductManager {
     const prod = await this.getProducts();
     let element = prod.find((x) => x.id === id);
     if (element) {
-      //fs.promises.appendFile(`Producto con ID ${id}: ${JSON.stringify(element)}`)
+      fs.promises.appendFile(
+        `Producto con ID ${id}: ${JSON.stringify(element)}`
+      );
       return element;
     } else {
       return `<h2>Product with ID: ${id} Not Found</h2>`;
