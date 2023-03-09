@@ -108,7 +108,7 @@ class ProductManager {
     let checkId = prod.find((x) => x.id === id);
     if (checkId) {
       let rest = prod.filter((x) => x.id !== id);
-      fs.promises.writeFile(JSON.stringify(rest));
+      fs.promises.writeFile(this.#path, JSON.stringify(rest));
       return rest;
     } else {
       throw new Error(` No se encuentra ningún objeto con id: ${id}`);
